@@ -10,8 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.36.3",
-    "expo-ecommerce": "file:..",
+    "@clerk/clerk-react": "^5.56.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
