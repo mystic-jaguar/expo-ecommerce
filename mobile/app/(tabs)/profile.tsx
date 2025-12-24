@@ -1,10 +1,34 @@
 import SafeScreen from "@/components/SafeScreen";
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 import { Text } from "react-native";
+=======
+import { useAuth, useUser } from "@clerk/clerk-expo";
+
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Image } from "expo-image";
+import { Ionicons } from "@expo/vector-icons";
+
+const MENU_ITEMS = [
+  { id: 1, icon: "person-outline", title: "Edit Profile", color: "#3B82F6", action: "/profile" },
+  { id: 2, icon: "list-outline", title: "Orders", color: "#10B981", action: "/orders" },
+  { id: 3, icon: "location-outline", title: "Addresses", color: "#F59E0B", action: "/addresses" },
+  { id: 4, icon: "heart-outline", title: "Wishlist", color: "#EF4444", action: "/wishlist" },
+] as const;
+>>>>>>> fe8998ed44e1fd8b6620980d54bb61b161fc02d6
 
 const ProfileScreen = () => {
+  const { signOut } = useAuth();
+  const { user } = useUser();
+
+  const handleMenuPress = (action: (typeof MENU_ITEMS)[number]["action"]) => {
+    if (action === "/profile") return;
+    // router.push(action)
+  };
+
   return (
     <SafeScreen>
+<<<<<<< HEAD
       <Text className="text-white">ProfileScreen</Text>
 =======
 import { useAuth, useUser } from "@clerk/clerk-expo";
@@ -32,6 +56,8 @@ const ProfileScreen = () => {
 
   return (
     <SafeScreen>
+=======
+>>>>>>> fe8998ed44e1fd8b6620980d54bb61b161fc02d6
       <ScrollView
         className="flex-1"
         showsVerticalScrollIndicator={false}
@@ -104,7 +130,11 @@ const ProfileScreen = () => {
           <TouchableOpacity
             className="flex-row items-center justify-between py-2"
             activeOpacity={0.7}
+<<<<<<< HEAD
             onPress={() => router.push("/privacy-security")}
+=======
+            // onPress={() => router.push("/privacy-security")}
+>>>>>>> fe8998ed44e1fd8b6620980d54bb61b161fc02d6
           >
             <View className="flex-row items-center">
               <Ionicons name="shield-checkmark-outline" size={22} color="#FFFFFF" />
@@ -126,7 +156,10 @@ const ProfileScreen = () => {
 
         <Text className="mx-6 mb-3 text-center text-text-secondary text-xs">Version 1.0.0</Text>
       </ScrollView>
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> fe8998ed44e1fd8b6620980d54bb61b161fc02d6
     </SafeScreen>
   );
 };
