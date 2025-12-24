@@ -1,36 +1,4 @@
 import SafeScreen from "@/components/SafeScreen";
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-import { Text } from "react-native";
-=======
-import { useAuth, useUser } from "@clerk/clerk-expo";
-
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { Image } from "expo-image";
-import { Ionicons } from "@expo/vector-icons";
-
-const MENU_ITEMS = [
-  { id: 1, icon: "person-outline", title: "Edit Profile", color: "#3B82F6", action: "/profile" },
-  { id: 2, icon: "list-outline", title: "Orders", color: "#10B981", action: "/orders" },
-  { id: 3, icon: "location-outline", title: "Addresses", color: "#F59E0B", action: "/addresses" },
-  { id: 4, icon: "heart-outline", title: "Wishlist", color: "#EF4444", action: "/wishlist" },
-] as const;
->>>>>>> fe8998ed44e1fd8b6620980d54bb61b161fc02d6
-
-const ProfileScreen = () => {
-  const { signOut } = useAuth();
-  const { user } = useUser();
-
-  const handleMenuPress = (action: (typeof MENU_ITEMS)[number]["action"]) => {
-    if (action === "/profile") return;
-    // router.push(action)
-  };
-
-  return (
-    <SafeScreen>
-<<<<<<< HEAD
-      <Text className="text-white">ProfileScreen</Text>
-=======
 import { useAuth, useUser } from "@clerk/clerk-expo";
 
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
@@ -56,8 +24,6 @@ const ProfileScreen = () => {
 
   return (
     <SafeScreen>
-=======
->>>>>>> fe8998ed44e1fd8b6620980d54bb61b161fc02d6
       <ScrollView
         className="flex-1"
         showsVerticalScrollIndicator={false}
@@ -130,11 +96,7 @@ const ProfileScreen = () => {
           <TouchableOpacity
             className="flex-row items-center justify-between py-2"
             activeOpacity={0.7}
-<<<<<<< HEAD
             onPress={() => router.push("/privacy-security")}
-=======
-            // onPress={() => router.push("/privacy-security")}
->>>>>>> fe8998ed44e1fd8b6620980d54bb61b161fc02d6
           >
             <View className="flex-row items-center">
               <Ionicons name="shield-checkmark-outline" size={22} color="#FFFFFF" />
@@ -156,41 +118,9 @@ const ProfileScreen = () => {
 
         <Text className="mx-6 mb-3 text-center text-text-secondary text-xs">Version 1.0.0</Text>
       </ScrollView>
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> fe8998ed44e1fd8b6620980d54bb61b161fc02d6
     </SafeScreen>
   );
 };
 
 export default ProfileScreen;
 
-// REACT NATIVE IMAGE VS EXPO IMAGE:
-
-// React Native Image (what we have used so far):
-// import { Image } from "react-native";
-//
-// <Image source={{ uri: url }} />
-
-// Basic image component
-// No built-in caching optimization
-// Requires source={{ uri: string }}
-
-// Expo Image (from expo-image):
-// import { Image } from "expo-image";
-
-// <Image source={url} />
-
-// Caching - automatic disk/memory caching
-// Placeholder - blur hash, thumbnail while loading
-// Transitions - crossfade, fade animations
-// Better performance - optimized native rendering
-// Simpler syntax: source={url} or source={{ uri: url }}
-// Supports contentFit instead of resizeMode
-
-// Example with expo-image:
-// <Image   source={user?.imageUrl}  placeholder={blurhash}  transition={200}  contentFit="cover"  className="size-20 rounded-full"/>
-
-// Recommendation: For production apps, expo-image is better — faster, cached, smoother UX.
-// React Native's Image works fine for simple cases though.
